@@ -22,9 +22,54 @@ namespace KeySignatureGenerator
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+        public bool random = false;
+        public bool major = false;
+        public bool minor = false;
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void btnGenerate_Click(object sender, RoutedEventArgs e)
+        {
+            if(random)
+            {
+
+            }
+            if (minor)
+            {
+
+            }
+            if (major)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
+        private void rbMinor_Checked(object sender, RoutedEventArgs e)
+        {
+            random = false;
+            major = false;
+            minor = true;
+        }
+
+        private void rbRandom_Checked(object sender, RoutedEventArgs e)
+        {
+            random = true;
+            major = false;
+            minor = false;
+        }
+
+        private void rbMajor_Checked(object sender, RoutedEventArgs e)
+        {
+            random = false;
+            major = true;
+            minor = false;
         }
     }
 }

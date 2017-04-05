@@ -17,10 +17,10 @@
             <ColumnDefinition Width="235"/>
             <ColumnDefinition Width="235"/>
         </Grid.ColumnDefinitions>
-        <RadioButton x:Name="rbRandom" Content="Random" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rbMajor" Content="Major" HorizontalAlignment="Left" Margin="10,41,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rbMinor" Content="Minor" HorizontalAlignment="Left" Margin="10,42,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-        <Button x:Name="btnGenerate" Content="Generate" Grid.Column="1" HorizontalAlignment="Left" Margin="10,42,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="0.492,-1.167" Width="215"/>
+        <RadioButton x:Name="rbRandom" Content="Random" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Checked="rbRandom_Checked"/>
+        <RadioButton x:Name="rbMajor" Content="Major" HorizontalAlignment="Left" Margin="10,41,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="rbMajor_Checked"/>
+        <RadioButton x:Name="rbMinor" Content="Minor" HorizontalAlignment="Left" Margin="10,42,0,0" Grid.Row="2" VerticalAlignment="Top" Checked="rbMinor_Checked"/>
+        <Button x:Name="btnGenerate" Content="Generate" Grid.Column="1" HorizontalAlignment="Left" Margin="10,42,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="0.492,-1.167" Width="215" Click="btnGenerate_Click"/>
         <TextBlock x:Name="tbkresults" Grid.Column="1" HorizontalAlignment="Left" Margin="10,27,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" Height="23"/>
 
     </Grid>
