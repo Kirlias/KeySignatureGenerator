@@ -28,9 +28,13 @@ namespace KeySignatureGenerator
         public bool major = false;
         public bool minor = false;
 
+        public int key;
+
         public List<string> majors = new List<string>();
         public List<string> minors = new List<string>();
         public List<string> randoms = new List<string>();
+
+        Random rand = new Random();
 
         public MainPage()
         {
@@ -39,24 +43,36 @@ namespace KeySignatureGenerator
 
         private void btnGenerate_Click(object sender, RoutedEventArgs e)
         {
+            ClearLists();
             CreateLists();
             if(random)
             {
-                
+                key = rand.Next(randoms.Count);
+                tbkresults.Text = randoms[key];
             }
             if (minor)
             {
-
+                key = rand.Next(minors.Count);
+                tbkresults.Text = minors[key];
             }
             if (major)
             {
-
+                key = rand.Next(majors.Count);
+                tbkresults.Text = majors[key];
             }
             else
             {
-
+                key = rand.Next(randoms.Count);
+                tbkresults.Text = randoms[key];
             }
             
+        }
+
+        private void ClearLists()
+        {
+            randoms.Clear();
+            majors.Clear();
+            minors.Clear();
         }
 
         private void rbMinor_Checked(object sender, RoutedEventArgs e)
