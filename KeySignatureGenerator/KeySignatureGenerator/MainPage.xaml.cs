@@ -68,9 +68,12 @@ namespace KeySignatureGenerator
             //if the minor radio button is selected
             if (minor)
             {
+                //same process as for randoms
                 key = rand.Next(minors.Count);
                 tbkresults.Text = minors[key];
             }
+
+            //if the major radio button is selected
             if (major)
             {
                 key = rand.Next(majors.Count);
@@ -79,13 +82,18 @@ namespace KeySignatureGenerator
             
         }
 
+        /// <summary>
+        /// Clears all lists
+        /// </summary>
         private void ClearLists()
         {
+            //list get cleared
             randoms.Clear();
             majors.Clear();
             minors.Clear();
         }
 
+        //boolean changed
         private void rbMinor_Checked(object sender, RoutedEventArgs e)
         {
             random = false;
@@ -107,41 +115,60 @@ namespace KeySignatureGenerator
             minor = false;
         }
 
+        //Generates the lists
         public void CreateLists()
         {
+            //ints for debugging later
             int iminor = 0;
             int imajor = 0;
+
+            //this mthod will create the randoms list
             AddToList("A major", "Ab major","A minor", "A# minor","B minor", 
                 "B major"," Bb major","C major","C# major","C minor","C# minor",
                 "D major","D minor", "D# minor","E minor","E major","Eb major",
                 "F minor", "F# minor","F major", "F# major","G minor", "G# minor",
                 "G major");
 
+            //for loop
             for (int i = 0; i < randoms.Count; i++)
             {
-
+                //if the current item contains the string "major"
                 if (randoms[i].Contains("major"))
                 {
+                    //add it to the majors list
                     majors.Add(randoms[i]);
+                    //outputs what was just added ot the majors list
                     Debug.WriteLine("Added " + majors[imajor] + " To majors");
+                    //increment the imajors int
                     imajor++;
                 }
+                //if not major it must be minor
                 else
                 {
-                    
+                    //adds the current item to the minors list
                     minors.Add(randoms[i]);
+                    //outputs the added item to the console
                     Debug.WriteLine("Added " + minors[iminor] + " To minors");
+                    //increment the iminor int
                     iminor++;
                 }
             }
 
         }
 
+        /// <summary>
+        /// Generates the randoms list
+        /// </summary> 
+        /// <param name="list">Items to be added to the randoms list</param>
         public void AddToList(params string[] list)
         {
+            //for loop
             for(int i = 0; i < list.Length; i++)
             {
+                //adds the current item in the list list to randoms
                 randoms.Add(list[i]);
+
+                //outputs what was just added to the list
                 Debug.WriteLine(randoms[i]);
             }
             
